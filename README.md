@@ -29,8 +29,16 @@ Make a reverse proxy. For example with [Caddy](https://caddyserver.com/):
 # Add this line inside your /etc/caddy/Caddyfile
 registry.yourdomain.com {
   reverse_proxy localhost:5000
+  handle_path /dashboard* {
+    reverse_proxy localhost:5001
+  }
 }
 ```
+
+Url
+
+- Registry server: <https://registry.yourdomain.com>
+- Registry dashboard: <https://registry.yourdomain.com/dashboard>
 
 ## Usage
 
